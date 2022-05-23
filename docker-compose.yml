@@ -1,0 +1,16 @@
+version: "2.0"
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.6.0
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    networks:
+      - docker_magento
+    environment:
+      - discovery.type=single-node
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    mem_limit: 512m
+networks:
+  docker_magento:
+    driver: bridge
