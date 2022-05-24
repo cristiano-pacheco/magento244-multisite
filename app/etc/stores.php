@@ -12,7 +12,7 @@ $runType = null;
 switch ($serverName) {
     case 'app.magento244-multisite.test':
         $runType = 'website';
-        $runCode = 'default';
+        $runCode = 'base';
         break;
 
     case 'app.magento244-website-two.test':
